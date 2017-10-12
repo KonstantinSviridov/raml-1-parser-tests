@@ -1,0 +1,13 @@
+#%RAML 1.0 Library
+
+uses:
+  lib: ./lib/libA.raml
+
+types:
+  Monkey: object
+
+resourceTypes:
+  resourceType:
+    type:
+      lib.rt:
+        param1: Monkey

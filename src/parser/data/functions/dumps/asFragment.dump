@@ -1,0 +1,98 @@
+{
+	"types": [
+		{
+			"SomeType": {
+				"name": "SomeType",
+				"displayName": "SomeType",
+				"typePropertyKind": "TYPE_EXPRESSION",
+				"type": [
+					"object"
+				],
+				"properties": {
+					"prop": {
+						"name": "prop",
+						"displayName": "prop",
+						"typePropertyKind": "TYPE_EXPRESSION",
+						"type": [
+							"string"
+						],
+						"required": true,
+						"__METADATA__": {
+							"primitiveValuesMeta": {
+								"displayName": {
+									"calculated": true
+								},
+								"required": {
+									"insertedAsDefault": true
+								}
+							}
+						}
+					}
+				},
+				"__METADATA__": {
+					"primitiveValuesMeta": {
+						"displayName": {
+							"calculated": true
+						}
+					}
+				}
+			}
+		}
+	],
+	"title": "Test",
+	"resources": [
+		{
+			"methods": [
+				{
+					"responses": {
+						"200": {
+							"code": "200",
+							"body": {
+								"application/xml": {
+									"name": "application/xml",
+									"displayName": "application/xml",
+									"typePropertyKind": "TYPE_EXPRESSION",
+									"type": [
+										"SomeType"
+									],
+									"example": {
+										"prop": "aaa"
+									},
+									"__METADATA__": {
+										"primitiveValuesMeta": {
+											"displayName": {
+												"calculated": true
+											}
+										}
+									},
+									"structuredExample": {
+										"value": "{\n  \"prop\": \"aaa\"\n}",
+										"strict": true,
+										"name": null,
+										"structuredValue": {
+											"prop": "aaa"
+										}
+									}
+								}
+							}
+						}
+					},
+					"method": "get"
+				}
+			],
+			"relativeUri": "/res",
+			"displayName": "/res",
+			"__METADATA__": {
+				"primitiveValuesMeta": {
+					"displayName": {
+						"calculated": true
+					}
+				}
+			},
+			"relativeUriPathSegments": [
+				"res"
+			],
+			"absoluteUri": "/res"
+		}
+	]
+}

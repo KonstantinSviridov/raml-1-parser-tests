@@ -1,0 +1,121 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "SomeType": {
+          "name": "SomeType",
+          "displayName": "SomeType",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "name": {
+              "name": "name",
+              "displayName": "name",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "ArrayType": {
+          "name": "ArrayType",
+          "displayName": "ArrayType",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "array"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          },
+          "items": "string"
+        }
+      },
+      {
+        "AnotherType": {
+          "name": "AnotherType",
+          "displayName": "AnotherType",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "example": {
+            "prop": [
+              "val1",
+              "val2"
+            ]
+          },
+          "properties": {
+            "prop": {
+              "name": "prop",
+              "displayName": "prop",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "ArrayType"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          },
+          "structuredExample": {
+            "value": "{\n  \"prop\": [\n    \"val1\",\n    \"val2\"\n  ]\n}",
+            "strict": true,
+            "name": null,
+            "structuredValue": {
+              "prop": [
+                "val1",
+                "val2"
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "title": "API"
+  },
+  "errors": []
+}

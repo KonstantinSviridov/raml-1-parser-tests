@@ -1,0 +1,45 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "Account": {
+          "name": "Account",
+          "displayName": "Account",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "Raw text."
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "My API With Types"
+  },
+  "errors": [
+    {
+      "code": "INHERITING_UNKNOWN_TYPE",
+      "message": "Inheriting from unknown type",
+      "path": "api.raml",
+      "range": {
+        "start": {
+          "line": 4,
+          "column": 4,
+          "position": 58
+        },
+        "end": {
+          "line": 4,
+          "column": 8,
+          "position": 62
+        }
+      }
+    }
+  ]
+}

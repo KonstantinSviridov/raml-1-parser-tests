@@ -1,0 +1,212 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "traits": [
+      {
+        "helloNightmare": {
+          "queryParameters": {
+            "nightMare": {
+              "name": "nightMare",
+              "displayName": "nightMare",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "type": {
+                    "insertedAsDefault": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              },
+              "<<isRequired>>": "<<value>>"
+            }
+          },
+          "name": "helloNightmare"
+        }
+      }
+    ],
+    "annotationTypes": [
+      {
+        "searchable": {
+          "name": "searchable",
+          "displayName": "searchable",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "nil"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "sortable": {
+          "name": "sortable",
+          "displayName": "sortable",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "default": {
+              "name": "default",
+              "displayName": "default",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ],
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "type": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "test",
+    "resources": [
+      {
+        "methods": [
+          {
+            "annotations": {
+              "searchable": {
+                "structuredValue": "someValue",
+                "name": "searchable"
+              }
+            },
+            "queryParameters": {
+              "kind": {
+                "annotations": {
+                  "sortable": {
+                    "structuredValue": {
+                      "default": "low"
+                    },
+                    "name": "sortable"
+                  },
+                  "searchable": {
+                    "structuredValue": null,
+                    "name": "searchable"
+                  }
+                },
+                "name": "kind",
+                "displayName": "kind",
+                "typePropertyKind": "TYPE_EXPRESSION",
+                "type": [
+                  "string"
+                ],
+                "required": true,
+                "__METADATA__": {
+                  "primitiveValuesMeta": {
+                    "displayName": {
+                      "calculated": true
+                    },
+                    "type": {
+                      "insertedAsDefault": true
+                    },
+                    "required": {
+                      "insertedAsDefault": true
+                    }
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "code": "200",
+                "body": {
+                  "application/json": {
+                    "name": "application/json",
+                    "displayName": "application/json",
+                    "typePropertyKind": "TYPE_EXPRESSION",
+                    "type": [
+                      "object"
+                    ],
+                    "__METADATA__": {
+                      "primitiveValuesMeta": {
+                        "displayName": {
+                          "calculated": true
+                        },
+                        "type": {
+                          "insertedAsDefault": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "method": "get"
+          }
+        ],
+        "relativeUri": "/animals",
+        "displayName": "/animals",
+        "__METADATA__": {
+          "primitiveValuesMeta": {
+            "displayName": {
+              "calculated": true
+            }
+          }
+        },
+        "relativeUriPathSegments": [
+          "animals"
+        ],
+        "absoluteUri": "/animals"
+      }
+    ]
+  },
+  "errors": [
+    {
+      "code": "NULL_EXPECTED",
+      "message": "null is expected",
+      "path": "apiInvalid.raml",
+      "range": {
+        "start": {
+          "line": 19,
+          "column": 4,
+          "position": 292
+        },
+        "end": {
+          "line": 19,
+          "column": 16,
+          "position": 304
+        }
+      }
+    }
+  ]
+}

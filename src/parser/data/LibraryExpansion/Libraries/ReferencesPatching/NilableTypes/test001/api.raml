@@ -1,0 +1,13 @@
+#%RAML 1.0 Library
+
+uses:
+  Types: libraries/types.raml
+
+resourceTypes:
+  rt:
+    put:
+      body:
+        application/json:
+         type: Types.Type1
+         example:
+           id: null

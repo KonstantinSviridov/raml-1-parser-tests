@@ -1,0 +1,227 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "PropertyType1": {
+          "name": "PropertyType1",
+          "displayName": "PropertyType1",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "name": {
+              "name": "name",
+              "displayName": "name",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "PropertyType2": {
+          "name": "PropertyType2",
+          "displayName": "PropertyType2",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "PropertyType1"
+          ],
+          "properties": {
+            "name2": {
+              "name": "name2",
+              "displayName": "name2",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "PropertyType3": {
+          "name": "PropertyType3",
+          "displayName": "PropertyType3",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "name": {
+              "name": "name",
+              "displayName": "name",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "boolean"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "Type1": {
+          "name": "Type1",
+          "displayName": "Type1",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "testProperty": {
+              "name": "testProperty",
+              "displayName": "testProperty",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "PropertyType1"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "Type2": {
+          "name": "Type2",
+          "displayName": "Type2",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "Type1"
+          ],
+          "properties": {
+            "testProperty": {
+              "name": "testProperty",
+              "displayName": "testProperty",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "PropertyType3"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "test"
+  },
+  "errors": [
+    {
+      "code": "RESTRICTIONS_CONFLICT",
+      "message": "Restrictions conflict between types 'Type2' and 'Type1': should be of type string and should be of type boolean",
+      "path": "test3.raml",
+      "range": {
+        "start": {
+          "line": 21,
+          "column": 6,
+          "position": 320
+        },
+        "end": {
+          "line": 21,
+          "column": 18,
+          "position": 332
+        }
+      }
+    }
+  ]
+}

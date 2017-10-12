@@ -1,0 +1,143 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "PropertyType1": {
+          "name": "PropertyType1",
+          "displayName": "PropertyType1",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "string"
+          ],
+          "minLength": 0,
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "PropertyType2": {
+          "name": "PropertyType2",
+          "displayName": "PropertyType2",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "PropertyType1"
+          ],
+          "maxLength": 5,
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "Type1": {
+          "name": "Type1",
+          "displayName": "Type1",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "testProperty": {
+              "name": "testProperty",
+              "displayName": "testProperty",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "PropertyType1"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "Type2": {
+          "name": "Type2",
+          "displayName": "Type2",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "Type1"
+          ],
+          "properties": {
+            "testProperty": {
+              "name": "testProperty",
+              "displayName": "testProperty",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "PropertyType2"
+              ],
+              "required": false,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "test"
+  },
+  "errors": [
+    {
+      "code": "REQUIRED_OVERRIDE_OPTIONAL",
+      "message": "Can not override required property 'testProperty' to be optional",
+      "path": "test7.raml",
+      "range": {
+        "start": {
+          "line": 14,
+          "column": 2,
+          "position": 202
+        },
+        "end": {
+          "line": 14,
+          "column": 7,
+          "position": 207
+        }
+      }
+    }
+  ]
+}

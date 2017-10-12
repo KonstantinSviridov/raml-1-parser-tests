@@ -1,0 +1,28 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "Persons": {
+          "name": "Persons",
+          "displayName": "Persons",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "array"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          },
+          "items": "string"
+        }
+      }
+    ],
+    "title": "Dropbox API"
+  },
+  "errors": []
+}

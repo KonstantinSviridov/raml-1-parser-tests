@@ -1,0 +1,64 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "Number1": {
+          "name": "Number1",
+          "displayName": "Number1",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "number"
+          ],
+          "minimum": 4,
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "Number2": {
+          "name": "Number2",
+          "displayName": "Number2",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "number"
+          ],
+          "maximum": 10,
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "Number3": {
+          "name": "Number3",
+          "displayName": "Number3",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "Number1",
+            "Number2"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "Mulitple Inheritance using the types"
+  },
+  "errors": []
+}

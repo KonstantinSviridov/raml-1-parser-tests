@@ -1,0 +1,45 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "SomeType": {
+          "name": "SomeType",
+          "displayName": "SomeType",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "SomeType"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "API"
+  },
+  "errors": [
+    {
+      "code": "RECURRENT_DEFINITION",
+      "message": "Recurrent type definition",
+      "path": "apiInvalid.raml",
+      "range": {
+        "start": {
+          "line": 5,
+          "column": 4,
+          "position": 46
+        },
+        "end": {
+          "line": 5,
+          "column": 8,
+          "position": 50
+        }
+      }
+    }
+  ]
+}

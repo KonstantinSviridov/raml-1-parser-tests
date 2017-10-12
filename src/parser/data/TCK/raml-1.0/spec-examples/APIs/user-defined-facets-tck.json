@@ -1,0 +1,79 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "CustomDate": {
+          "name": "CustomDate",
+          "displayName": "CustomDate",
+          "facets": {
+            "onlyFutureDates": {
+              "name": "onlyFutureDates",
+              "displayName": "onlyFutureDates",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "boolean"
+              ],
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  }
+                }
+              }
+            },
+            "noHolidays": {
+              "name": "noHolidays",
+              "displayName": "noHolidays",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "boolean"
+              ],
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  }
+                }
+              }
+            }
+          },
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "date-only"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "PossibleMeetingDate": {
+          "name": "PossibleMeetingDate",
+          "displayName": "PossibleMeetingDate",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "CustomDate"
+          ],
+          "fixedFacets": {
+            "noHolidays": true
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "API with Types"
+  },
+  "errors": []
+}

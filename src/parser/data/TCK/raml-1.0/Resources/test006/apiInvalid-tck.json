@@ -1,0 +1,180 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "User": {
+          "name": "User",
+          "displayName": "User",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "name": {
+              "name": "name",
+              "displayName": "name",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            },
+            "age": {
+              "name": "age",
+              "displayName": "age",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "number"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "API",
+    "baseUri": "/some/base/uri",
+    "protocols": [
+      "HTTP"
+    ],
+    "resources": [
+      {
+        "methods": [
+          {
+            "body": {
+              "application/xml": {
+                "name": "application/xml",
+                "displayName": "application/xml",
+                "typePropertyKind": "TYPE_EXPRESSION",
+                "type": [
+                  "User"
+                ],
+                "example": {
+                  "name": "john",
+                  "age": "34s"
+                },
+                "__METADATA__": {
+                  "primitiveValuesMeta": {
+                    "displayName": {
+                      "calculated": true
+                    }
+                  }
+                },
+                "structuredExample": {
+                  "value": "{\n  \"name\": \"john\",\n  \"age\": \"34s\"\n}",
+                  "strict": true,
+                  "name": null,
+                  "structuredValue": {
+                    "name": "john",
+                    "age": "34s"
+                  }
+                }
+              }
+            },
+            "protocols": [
+              "HTTP"
+            ],
+            "method": "get",
+            "__METADATA__": {
+              "primitiveValuesMeta": {
+                "protocols": {
+                  "calculated": true
+                }
+              }
+            }
+          }
+        ],
+        "uriParameters": {
+          "blah": {
+            "name": "blah",
+            "displayName": "blah",
+            "typePropertyKind": "TYPE_EXPRESSION",
+            "type": [
+              "string"
+            ],
+            "required": true,
+            "__METADATA__": {
+              "primitiveValuesMeta": {
+                "displayName": {
+                  "calculated": true
+                },
+                "required": {
+                  "insertedAsDefault": true
+                }
+              }
+            }
+          }
+        },
+        "relativeUri": "/someChildUri/{blah}",
+        "displayName": "/someChildUri/{blah}",
+        "__METADATA__": {
+          "primitiveValuesMeta": {
+            "displayName": {
+              "calculated": true
+            }
+          }
+        },
+        "relativeUriPathSegments": [
+          "someChildUri",
+          "{blah}"
+        ],
+        "absoluteUri": "/some/base/uri/someChildUri/{blah}"
+      }
+    ],
+    "__METADATA__": {
+      "primitiveValuesMeta": {
+        "protocols": {
+          "calculated": true
+        }
+      }
+    }
+  },
+  "errors": [
+    {
+      "code": "TYPE_EXPECTED",
+      "message": "Expected type 'number' but got 'string'",
+      "path": "apiInvalid.raml",
+      "range": {
+        "start": {
+          "line": 22,
+          "column": 14,
+          "position": 329
+        },
+        "end": {
+          "line": 22,
+          "column": 17,
+          "position": 332
+        }
+      }
+    }
+  ]
+}

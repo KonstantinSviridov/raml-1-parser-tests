@@ -1,0 +1,29 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "SomeType": {
+          "name": "SomeType",
+          "displayName": "SomeType",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "integer"
+          ],
+          "minimum": 1,
+          "maximum": 1,
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "Some API"
+  },
+  "errors": []
+}

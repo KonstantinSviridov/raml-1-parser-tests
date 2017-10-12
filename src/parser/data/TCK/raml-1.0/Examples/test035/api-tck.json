@@ -1,0 +1,86 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "ItsComplicated": {
+          "name": "ItsComplicated",
+          "displayName": "ItsComplicated",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "example": {
+            "prop1": "stringValue1",
+            "prop2": {
+              "someProperty": "stringValue2"
+            }
+          },
+          "properties": {
+            "/.*/": {
+              "name": "/.*/",
+              "displayName": "/.*/",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          },
+          "structuredExample": {
+            "value": "{\n  \"prop1\": \"stringValue1\",\n  \"prop2\": {\n    \"someProperty\": \"stringValue2\"\n  }\n}",
+            "strict": true,
+            "name": null,
+            "structuredValue": {
+              "prop1": "stringValue1",
+              "prop2": {
+                "someProperty": "stringValue2"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "Api"
+  },
+  "errors": [
+    {
+      "code": "TYPE_EXPECTED",
+      "message": "Expected type 'string' but got 'object'",
+      "path": "api.raml",
+      "range": {
+        "start": {
+          "line": 9,
+          "column": 6,
+          "position": 128
+        },
+        "end": {
+          "line": 9,
+          "column": 11,
+          "position": 133
+        }
+      }
+    }
+  ]
+}

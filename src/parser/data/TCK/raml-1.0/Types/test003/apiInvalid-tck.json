@@ -1,0 +1,191 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "SomeType": {
+          "name": "SomeType",
+          "displayName": "SomeType",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "example": {
+            "name": "somestring"
+          },
+          "properties": {
+            "name": {
+              "name": "name",
+              "displayName": "name",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          },
+          "structuredExample": {
+            "value": "{\n  \"name\": \"somestring\"\n}",
+            "strict": true,
+            "name": null,
+            "structuredValue": {
+              "name": "somestring"
+            }
+          }
+        }
+      },
+      {
+        "AnotherType": {
+          "name": "AnotherType",
+          "displayName": "AnotherType",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "age": {
+              "name": "age",
+              "displayName": "age",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "number"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "additionalProperties": false,
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "ComplexType": {
+          "name": "ComplexType",
+          "displayName": "ComplexType",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "example": {
+            "someProperty": {
+              "name": "stringValue",
+              "age": "123s"
+            }
+          },
+          "properties": {
+            "someProperty": {
+              "name": "someProperty",
+              "displayName": "someProperty",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "AnotherType"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          },
+          "structuredExample": {
+            "value": "{\n  \"someProperty\": {\n    \"name\": \"stringValue\",\n    \"age\": \"123s\"\n  }\n}",
+            "strict": true,
+            "name": null,
+            "structuredValue": {
+              "someProperty": {
+                "name": "stringValue",
+                "age": "123s"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "API"
+  },
+  "errors": [
+    {
+      "code": "UNKNOWN_PROPERTY",
+      "message": "Unknown property: 'name'",
+      "path": "apiInvalid.raml",
+      "range": {
+        "start": {
+          "line": 23,
+          "column": 8,
+          "position": 335
+        },
+        "end": {
+          "line": 23,
+          "column": 12,
+          "position": 339
+        }
+      }
+    },
+    {
+      "code": "TYPE_EXPECTED",
+      "message": "Expected type 'number' but got 'string'",
+      "path": "apiInvalid.raml",
+      "range": {
+        "start": {
+          "line": 24,
+          "column": 8,
+          "position": 361
+        },
+        "end": {
+          "line": 24,
+          "column": 11,
+          "position": 364
+        }
+      }
+    }
+  ]
+}

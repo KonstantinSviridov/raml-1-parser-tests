@@ -1,0 +1,26 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Library",
+  "specification": {
+    "types": [
+      {
+        "Foo": {
+          "name": "Foo",
+          "displayName": "Foo",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "nil"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "errors": []
+}

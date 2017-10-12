@@ -1,0 +1,112 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "Email": {
+          "name": "Email",
+          "displayName": "Email",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "subject": {
+              "name": "subject",
+              "displayName": "subject",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            },
+            "body": {
+              "name": "body",
+              "displayName": "body",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "Emails": {
+          "name": "Emails",
+          "displayName": "Emails",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "array"
+          ],
+          "example": [
+            {
+              "subject": "My Email 1",
+              "body": "This is the text for email 1."
+            },
+            {
+              "subject": "My Email 2",
+              "body": "This is the text for email 2."
+            }
+          ],
+          "uniqueItems": true,
+          "minItems": 1,
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          },
+          "structuredExample": {
+            "value": "[\n  {\n    \"subject\": \"My Email 1\",\n    \"body\": \"This is the text for email 1.\"\n  },\n  {\n    \"subject\": \"My Email 2\",\n    \"body\": \"This is the text for email 2.\"\n  }\n]",
+            "strict": true,
+            "name": null,
+            "structuredValue": [
+              {
+                "subject": "My Email 1",
+                "body": "This is the text for email 1."
+              },
+              {
+                "subject": "My Email 2",
+                "body": "This is the text for email 2."
+              }
+            ]
+          },
+          "items": "Email"
+        }
+      }
+    ],
+    "title": "Simple Array Type with Example"
+  },
+  "errors": []
+}

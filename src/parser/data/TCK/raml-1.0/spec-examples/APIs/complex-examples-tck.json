@@ -1,0 +1,283 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "User": {
+          "name": "User",
+          "displayName": "User",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "example": {
+            "name": "Bob",
+            "lastname": "Marley"
+          },
+          "properties": {
+            "name": {
+              "name": "name",
+              "displayName": "name",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            },
+            "lastname": {
+              "name": "lastname",
+              "displayName": "lastname",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          },
+          "structuredExample": {
+            "value": "{\n  \"name\": \"Bob\",\n  \"lastname\": \"Marley\"\n}",
+            "strict": true,
+            "name": null,
+            "structuredValue": {
+              "name": "Bob",
+              "lastname": "Marley"
+            }
+          }
+        }
+      },
+      {
+        "Org": {
+          "name": "Org",
+          "displayName": "Org",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "name": {
+              "name": "name",
+              "displayName": "name",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            },
+            "address": {
+              "name": "address",
+              "displayName": "address",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": false,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            },
+            "value": {
+              "name": "value",
+              "displayName": "value",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": false,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "API with Examples",
+    "resources": [
+      {
+        "methods": [
+          {
+            "headers": {
+              "UserID": {
+                "name": "UserID",
+                "displayName": "UserID",
+                "typePropertyKind": "TYPE_EXPRESSION",
+                "type": [
+                  "string"
+                ],
+                "example": "SWED-123",
+                "required": true,
+                "description": "the identifier for the user who posts a new organization",
+                "__METADATA__": {
+                  "primitiveValuesMeta": {
+                    "displayName": {
+                      "calculated": true
+                    },
+                    "required": {
+                      "insertedAsDefault": true
+                    }
+                  }
+                },
+                "structuredExample": {
+                  "value": "SWED-123",
+                  "strict": true,
+                  "name": null,
+                  "structuredValue": "SWED-123"
+                }
+              }
+            },
+            "body": {
+              "application/json": {
+                "name": "application/json",
+                "displayName": "application/json",
+                "typePropertyKind": "TYPE_EXPRESSION",
+                "type": [
+                  "Org"
+                ],
+                "example": {
+                  "name": "Doe Enterprise",
+                  "value": "Silver"
+                },
+                "__METADATA__": {
+                  "primitiveValuesMeta": {
+                    "displayName": {
+                      "calculated": true
+                    }
+                  }
+                },
+                "structuredExample": {
+                  "value": "{\n  \"name\": \"Doe Enterprise\",\n  \"value\": \"Silver\"\n}",
+                  "strict": true,
+                  "name": null,
+                  "structuredValue": {
+                    "name": "Doe Enterprise",
+                    "value": "Silver"
+                  }
+                }
+              }
+            },
+            "method": "post"
+          },
+          {
+            "responses": {
+              "201": {
+                "code": "201",
+                "body": {
+                  "application/json": {
+                    "name": "application/json",
+                    "displayName": "application/json",
+                    "typePropertyKind": "TYPE_EXPRESSION",
+                    "type": [
+                      "Org"
+                    ],
+                    "examples": [
+                      {
+                        "value": "{\n  \"name\": \"Acme\"\n}",
+                        "strict": true,
+                        "name": "acme",
+                        "structuredValue": {
+                          "name": "Acme"
+                        }
+                      },
+                      {
+                        "value": "{\n  \"name\": \"Software Corp\",\n  \"address\": \"35 Central Street\",\n  \"value\": \"Gold\"\n}",
+                        "strict": true,
+                        "name": "softwareCorp",
+                        "structuredValue": {
+                          "name": "Software Corp",
+                          "address": "35 Central Street",
+                          "value": "Gold"
+                        }
+                      }
+                    ],
+                    "__METADATA__": {
+                      "primitiveValuesMeta": {
+                        "displayName": {
+                          "calculated": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Returns an organization entity.",
+            "method": "get"
+          }
+        ],
+        "relativeUri": "/organization",
+        "displayName": "/organization",
+        "__METADATA__": {
+          "primitiveValuesMeta": {
+            "displayName": {
+              "calculated": true
+            }
+          }
+        },
+        "relativeUriPathSegments": [
+          "organization"
+        ],
+        "absoluteUri": "/organization"
+      }
+    ]
+  },
+  "errors": []
+}

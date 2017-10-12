@@ -1,0 +1,85 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "annotations": {
+      "Type": {
+        "structuredValue": {
+          "prop1": {
+            "prop1": 1
+          }
+        },
+        "name": "Type"
+      }
+    },
+    "annotationTypes": [
+      {
+        "Type": {
+          "name": "Type",
+          "displayName": "Type",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "prop1": {
+              "name": "prop1",
+              "displayName": "prop1",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "object"
+              ],
+              "required": true,
+              "properties": {
+                "/.*/": {
+                  "name": "/.*/",
+                  "displayName": "/.*/",
+                  "typePropertyKind": "TYPE_EXPRESSION",
+                  "type": [
+                    "number"
+                  ],
+                  "required": true,
+                  "__METADATA__": {
+                    "primitiveValuesMeta": {
+                      "displayName": {
+                        "calculated": true
+                      },
+                      "required": {
+                        "insertedAsDefault": true
+                      }
+                    }
+                  }
+                }
+              },
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "type": {
+                    "insertedAsDefault": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "a"
+  },
+  "errors": []
+}

@@ -1,0 +1,224 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "schemas": [
+      {
+        "account": {
+          "name": "account",
+          "displayName": "account",
+          "typePropertyKind": "JSON",
+          "type": [
+            "{\n  \"$schema\": \"http://json-schema.org/draft-03/schema\",\n  \"type\": \"object\" ,\n  \"properties\": {\n    \"username\": {\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"type\": \"string\"\n    }\n  }\n}\n"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "TypeBase": {
+          "name": "TypeBase",
+          "displayName": "TypeBase",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "example": {
+            "baseField": "name"
+          },
+          "properties": {
+            "baseField": {
+              "name": "baseField",
+              "displayName": "baseField",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          },
+          "structuredExample": {
+            "value": "{\n  \"baseField\": \"name\"\n}",
+            "strict": true,
+            "name": null,
+            "structuredValue": {
+              "baseField": "name"
+            }
+          }
+        }
+      },
+      {
+        "TestType": {
+          "name": "TestType",
+          "displayName": "TestType",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "TypeBase"
+          ],
+          "example": {
+            "baseField": "name",
+            "field": "value"
+          },
+          "properties": {
+            "field": {
+              "name": "field",
+              "displayName": "field",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          },
+          "structuredExample": {
+            "value": "{\n  \"baseField\": \"name\",\n  \"field\": \"value\"\n}",
+            "strict": true,
+            "name": null,
+            "structuredValue": {
+              "baseField": "name",
+              "field": "value"
+            }
+          }
+        }
+      }
+    ],
+    "title": "test",
+    "resources": [
+      {
+        "methods": [
+          {
+            "responses": {
+              "201": {
+                "code": "201",
+                "body": {
+                  "application/json": {
+                    "name": "application/json",
+                    "displayName": "application/json",
+                    "typePropertyKind": "TYPE_EXPRESSION",
+                    "type": [
+                      "TestType"
+                    ],
+                    "example": {
+                      "baseField": "base",
+                      "field": "any text"
+                    },
+                    "properties": {
+                      "additionalField": {
+                        "name": "additionalField",
+                        "displayName": "additionalField",
+                        "typePropertyKind": "TYPE_EXPRESSION",
+                        "type": [
+                          "string"
+                        ],
+                        "required": false,
+                        "__METADATA__": {
+                          "primitiveValuesMeta": {
+                            "displayName": {
+                              "calculated": true
+                            },
+                            "required": {
+                              "insertedAsDefault": true
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "__METADATA__": {
+                      "primitiveValuesMeta": {
+                        "displayName": {
+                          "calculated": true
+                        }
+                      }
+                    },
+                    "structuredExample": {
+                      "value": "{\n  \"baseField\": \"base\",\n  \"field\": \"any text\"\n}",
+                      "strict": true,
+                      "name": null,
+                      "structuredValue": {
+                        "baseField": "base",
+                        "field": "any text"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "body": {
+              "application/json": {
+                "name": "application/json",
+                "displayName": "application/json",
+                "schema": [
+                  "account"
+                ],
+                "__METADATA__": {
+                  "primitiveValuesMeta": {
+                    "displayName": {
+                      "calculated": true
+                    },
+                    "type": {
+                      "insertedAsDefault": true
+                    }
+                  }
+                }
+              }
+            },
+            "method": "post"
+          }
+        ],
+        "relativeUri": "/test",
+        "displayName": "/test",
+        "__METADATA__": {
+          "primitiveValuesMeta": {
+            "displayName": {
+              "calculated": true
+            }
+          }
+        },
+        "relativeUriPathSegments": [
+          "test"
+        ],
+        "absoluteUri": "/test"
+      }
+    ]
+  },
+  "errors": []
+}

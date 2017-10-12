@@ -1,0 +1,15 @@
+{
+	"name": "example",
+	"displayName": "example",
+	"typePropertyKind": "XML",
+	"type": [
+		"<TypeFromLibrary>\n  <someProp>lorem ipsum</someProp>\n</TypeFromLibrary>\n"
+	],
+	"__METADATA__": {
+		"primitiveValuesMeta": {
+			"displayName": {
+				"calculated": true
+			}
+		}
+	}
+}

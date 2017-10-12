@@ -1,0 +1,36 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "annotationTypes": [
+      {
+        "z": {
+          "name": "z",
+          "displayName": "z",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "number"
+          ],
+          "maximum": 10,
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "Hello",
+    "scalarsAnnotations": {
+      "title": [
+        {
+          "structuredValue": 1,
+          "name": "z"
+        }
+      ]
+    }
+  },
+  "errors": []
+}

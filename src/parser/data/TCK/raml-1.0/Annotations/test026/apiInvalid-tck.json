@@ -1,0 +1,87 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "annotationTypes": [
+      {
+        "a1": {
+          "name": "a1",
+          "displayName": "a1",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "number"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "a2": {
+          "name": "a2",
+          "displayName": "a2",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "boolean"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "API",
+    "resources": [
+      {
+        "description": "descriptionValue",
+        "relativeUri": "/resource",
+        "displayName": "myResource",
+        "scalarsAnnotations": {
+          "description": [
+            {
+              "structuredValue": 5,
+              "name": "a1"
+            }
+          ],
+          "displayName": [
+            {
+              "structuredValue": "value1",
+              "name": "a2"
+            }
+          ]
+        },
+        "relativeUriPathSegments": [
+          "resource"
+        ],
+        "absoluteUri": "/resource"
+      }
+    ]
+  },
+  "errors": [
+    {
+      "code": "TYPE_EXPECTED",
+      "message": "Expected type 'boolean' but got 'string'",
+      "path": "apiInvalid.raml",
+      "range": {
+        "start": {
+          "line": 13,
+          "column": 4,
+          "position": 175
+        },
+        "end": {
+          "line": 13,
+          "column": 8,
+          "position": 179
+        }
+      }
+    }
+  ]
+}

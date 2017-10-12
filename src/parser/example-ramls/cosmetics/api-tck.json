@@ -1,0 +1,420 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "uses": [
+      {
+        "key": "res",
+        "value": "modules/resource-types.raml"
+      },
+      {
+        "key": "res.tra",
+        "value": "modules/traits.raml"
+      },
+      {
+        "key": "res.typ",
+        "value": "modules/types.raml"
+      },
+      {
+        "key": "res.typ.ano",
+        "value": "modules/annotations.raml"
+      }
+    ],
+    "traits": [
+      {
+        "res.tra.pageable": {
+          "queryParameters": {
+            "pageIndex": {
+              "name": "pageIndex",
+              "displayName": "pageIndex",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "integer"
+              ],
+              "default": 0,
+              "example": 1,
+              "required": false,
+              "structuredExample": {
+                "value": "1",
+                "strict": true,
+                "name": null,
+                "structuredValue": 1
+              }
+            },
+            "pageSize": {
+              "name": "pageSize",
+              "displayName": "pageSize",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "integer"
+              ],
+              "default": 10,
+              "example": 10,
+              "required": false,
+              "structuredExample": {
+                "value": "10",
+                "strict": true,
+                "name": null,
+                "structuredValue": 10
+              }
+            }
+          },
+          "name": "res.tra.pageable"
+        }
+      },
+      {
+        "res.tra.searchable": {
+          "queryParameters": {
+            "name": {
+              "name": "name",
+              "displayName": "name",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "example": "Deep Steep Honey Bubble Bath",
+              "required": false,
+              "structuredExample": {
+                "value": "Deep Steep Honey Bubble Bath",
+                "strict": true,
+                "name": null,
+                "structuredValue": "Deep Steep Honey Bubble Bath"
+              }
+            },
+            "type": {
+              "name": "type",
+              "displayName": "type",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "example": "Oils",
+              "required": false,
+              "structuredExample": {
+                "value": "Oils",
+                "strict": true,
+                "name": null,
+                "structuredValue": "Oils"
+              }
+            },
+            "brand": {
+              "name": "brand",
+              "displayName": "brand",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "example": "Naturtint",
+              "required": false,
+              "structuredExample": {
+                "value": "Naturtint",
+                "strict": true,
+                "name": null,
+                "structuredValue": "Naturtint"
+              }
+            }
+          },
+          "name": "res.tra.searchable"
+        }
+      },
+      {
+        "res.tra.imageable": {
+          "queryParameters": {
+            "imageType": {
+              "name": "imageType",
+              "displayName": "imageType",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "default": "SmallImage",
+              "example": "TinyImage,SwatchImage,SmallImage,MediumImage,LargeImage",
+              "required": false,
+              "description": "Comma , separated list just like in example. One alone may be present",
+              "structuredExample": {
+                "value": "TinyImage,SwatchImage,SmallImage,MediumImage,LargeImage",
+                "strict": true,
+                "name": null,
+                "structuredValue": "TinyImage,SwatchImage,SmallImage,MediumImage,LargeImage"
+              }
+            }
+          },
+          "name": "res.tra.imageable"
+        }
+      }
+    ],
+    "resourceTypes": [
+      {
+        "res.base": {
+          "name": "res.base",
+          "get": {
+            "responses": {
+              "200": {
+                "code": "200",
+                "body": {
+                  "application/json": {
+                    "name": "application/json",
+                    "displayName": "application/json",
+                    "typePropertyKind": "TYPE_EXPRESSION",
+                    "type": [
+                      "typ.Get<<resourcePathName | !uppercamelcase>>Response"
+                    ]
+                  }
+                }
+              }
+            },
+            "method": "get"
+          }
+        }
+      },
+      {
+        "res.read-only-collection": {
+          "type": "res.base",
+          "name": "res.read-only-collection",
+          "get": {
+            "is": [
+              "res.tra.pageable"
+            ],
+            "method": "get"
+          }
+        }
+      },
+      {
+        "res.collection": {
+          "type": "res.read-only-collection",
+          "name": "res.collection",
+          "post": {
+            "responses": {
+              "201": {
+                "code": "201",
+                "headers": {
+                  "Location": {
+                    "name": "Location",
+                    "displayName": "Location",
+                    "typePropertyKind": "TYPE_EXPRESSION",
+                    "type": [
+                      "string"
+                    ],
+                    "required": true,
+                    "description": "uri of new resource"
+                  }
+                },
+                "description": "Created!"
+              }
+            },
+            "body": {
+              "type": {
+                "name": "type",
+                "displayName": "type",
+                "typePropertyKind": "TYPE_EXPRESSION",
+                "type": [
+                  "typ.Post<<resourcePathName | !uppercamelcase>>Request"
+                ]
+              }
+            },
+            "method": "post"
+          }
+        }
+      },
+      {
+        "res.controller": {
+          "name": "res.controller",
+          "post": {
+            "responses": {
+              "204": {
+                "code": "204",
+                "description": "Done!"
+              }
+            },
+            "method": "post"
+          }
+        }
+      },
+      {
+        "res.member": {
+          "type": "res.base",
+          "name": "res.member",
+          "put": {
+            "responses": {
+              "204": {
+                "code": "204",
+                "description": "Modified"
+              }
+            },
+            "body": {
+              "type": {
+                "name": "type",
+                "displayName": "type",
+                "typePropertyKind": "TYPE_EXPRESSION",
+                "type": [
+                  "typ.Put<<resourcePathName | !uppercamelcase>>Request"
+                ]
+              }
+            },
+            "method": "put"
+          },
+          "patch": {
+            "body": {
+              "type": {
+                "name": "type",
+                "displayName": "type",
+                "typePropertyKind": "TYPE_EXPRESSION",
+                "type": [
+                  "typ.Patch<<resourcePathName | !uppercamelcase>>Request"
+                ]
+              }
+            },
+            "method": "patch"
+          },
+          "delete": {
+            "responses": {
+              "204": {
+                "code": "204",
+                "description": "Delete"
+              }
+            },
+            "method": "delete"
+          }
+        }
+      },
+      {
+        "rt": {
+          "name": "rt",
+          "get": {
+            "body": {
+              "application/json": {
+                "name": "application/json",
+                "displayName": "application/json",
+                "typePropertyKind": "TYPE_EXPRESSION",
+                "type": [
+                  "string"
+                ]
+              }
+            },
+            "method": "get"
+          }
+        }
+      }
+    ],
+    "title": "Álainn Cosmetics Mobile Orders API",
+    "version": "1",
+    "baseUri": "https://ec2-52-201-242-128.compute-1.amazonaws.com/mocks/1201bcdf-f1a0-4eb3-a002-4f6f817d44cc/api",
+    "protocols": [
+      "HTTPS"
+    ],
+    "mediaType": "application/json"
+  },
+  "errors": [
+    {
+      "code": "MEDIATYPE_EXCEPTION",
+      "message": "invalid media type",
+      "path": "C:/GIT-repos/raml-org/raml-js-parser-2/src/parser/test/example-ramls/cosmetics/modules/resource-types.raml",
+      "range": {
+        "start": {
+          "line": 23,
+          "column": 8,
+          "position": 401
+        },
+        "end": {
+          "line": 23,
+          "column": 12,
+          "position": 405
+        }
+      },
+      "trace": [
+        {
+          "code": "ISSUES_IN_THE_LIBRARY",
+          "message": "Issues in the used library: 'modules/resource-types.raml'",
+          "path": "api.raml",
+          "range": {
+            "start": {
+              "line": 8,
+              "column": 2,
+              "position": 268
+            },
+            "end": {
+              "line": 8,
+              "column": 5,
+              "position": 271
+            }
+          },
+          "isWarning": true
+        }
+      ]
+    },
+    {
+      "code": "MEDIATYPE_EXCEPTION",
+      "message": "invalid media type",
+      "path": "C:/GIT-repos/raml-org/raml-js-parser-2/src/parser/test/example-ramls/cosmetics/modules/resource-types.raml",
+      "range": {
+        "start": {
+          "line": 41,
+          "column": 8,
+          "position": 807
+        },
+        "end": {
+          "line": 41,
+          "column": 12,
+          "position": 811
+        }
+      },
+      "trace": [
+        {
+          "code": "ISSUES_IN_THE_LIBRARY",
+          "message": "Issues in the used library: 'modules/resource-types.raml'",
+          "path": "api.raml",
+          "range": {
+            "start": {
+              "line": 8,
+              "column": 2,
+              "position": 268
+            },
+            "end": {
+              "line": 8,
+              "column": 5,
+              "position": 271
+            }
+          },
+          "isWarning": true
+        }
+      ]
+    },
+    {
+      "code": "MEDIATYPE_EXCEPTION",
+      "message": "invalid media type",
+      "path": "C:/GIT-repos/raml-org/raml-js-parser-2/src/parser/test/example-ramls/cosmetics/modules/resource-types.raml",
+      "range": {
+        "start": {
+          "line": 47,
+          "column": 8,
+          "position": 960
+        },
+        "end": {
+          "line": 47,
+          "column": 12,
+          "position": 964
+        }
+      },
+      "trace": [
+        {
+          "code": "ISSUES_IN_THE_LIBRARY",
+          "message": "Issues in the used library: 'modules/resource-types.raml'",
+          "path": "api.raml",
+          "range": {
+            "start": {
+              "line": 8,
+              "column": 2,
+              "position": 268
+            },
+            "end": {
+              "line": 8,
+              "column": 5,
+              "position": 271
+            }
+          },
+          "isWarning": true
+        }
+      ]
+    }
+  ]
+}

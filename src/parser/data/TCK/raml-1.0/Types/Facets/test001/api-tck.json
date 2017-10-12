@@ -1,0 +1,153 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "myDate": {
+          "annotations": {
+            "reader": {
+              "structuredValue": "myReaader.ts",
+              "name": "reader"
+            },
+            "writer": {
+              "structuredValue": "myWiter.ts",
+              "name": "writer"
+            }
+          },
+          "name": "myDate",
+          "displayName": "myDate",
+          "facets": {
+            "format": {
+              "name": "format",
+              "displayName": "format",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  }
+                }
+              }
+            }
+          },
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "string"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "year": {
+          "name": "year",
+          "displayName": "year",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "myDate"
+          ],
+          "fixedFacets": {
+            "format": "YYYY"
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "annotationTypes": [
+      {
+        "reader": {
+          "name": "reader",
+          "displayName": "reader",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "string"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "writer": {
+          "name": "writer",
+          "displayName": "writer",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "string"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "A",
+    "resources": [
+      {
+        "methods": [
+          {
+            "queryParameters": {
+              "y": {
+                "name": "y",
+                "displayName": "y",
+                "typePropertyKind": "TYPE_EXPRESSION",
+                "type": [
+                  "year"
+                ],
+                "required": true,
+                "__METADATA__": {
+                  "primitiveValuesMeta": {
+                    "displayName": {
+                      "calculated": true
+                    },
+                    "required": {
+                      "insertedAsDefault": true
+                    }
+                  }
+                }
+              }
+            },
+            "method": "get"
+          }
+        ],
+        "relativeUri": "/q",
+        "displayName": "/q",
+        "__METADATA__": {
+          "primitiveValuesMeta": {
+            "displayName": {
+              "calculated": true
+            }
+          }
+        },
+        "relativeUriPathSegments": [
+          "q"
+        ],
+        "absoluteUri": "/q"
+      }
+    ]
+  },
+  "errors": []
+}

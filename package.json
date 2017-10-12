@@ -1,0 +1,46 @@
+{
+  "name": "raml-1-parser-tests",
+  "version": "0.0.1",
+  "description": "Tests for the Mulesoft RAML JS parser",
+  "main": "dist/index.js",
+  "scripts": {
+    "parser": "gulp test-parser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KonstantinSviridov/raml-1-parser-tests.git"
+  },
+  "keywords": [
+    "RAML",
+    "JS",
+    "parser",
+    "tests"
+  ],
+  "author": "Konstantin Sviridov",
+  "license": "SEE LICENSE IN license.txt",
+  "bugs": {
+    "url": "https://github.com/KonstantinSviridov/raml-1-parser-tests/issues"
+  },
+  "homepage": "https://github.com/KonstantinSviridov/raml-1-parser-tests#readme",
+  "dependencies": {
+    "raml-1-parser": "^1.1.32",
+    "atom-text-typer" : "^0.0.1",
+    "rimraf": "*",
+    "mocha": "^4.0.0",
+    "chai": "^4.1.2",
+    "typescript": "2.5.2",
+    "webpack": "^1.15.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.1",
+    "chai-as-promised": "^7.1.1",
+    "raml-1-parser-test-utils": "^1.0.10",
+    "gulp-istanbul" : "*"
+  },
+  "devDependencies": {
+    "@types/node": "4.2.20",
+    "@types/chai": "^4.0.1",
+    "@types/mocha": "^2.2.41",
+    "@types/underscore": "^1.8.3",
+    "dev-env-installer": "^0.0.14"
+  }
+}

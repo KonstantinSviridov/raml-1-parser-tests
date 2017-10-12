@@ -1,0 +1,31 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "Age": {
+          "name": "Age",
+          "displayName": "Age",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "integer"
+          ],
+          "minimum": 3,
+          "maximum": 5,
+          "format": "int8",
+          "multipleOf": 1,
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "Integer Type"
+  },
+  "errors": []
+}

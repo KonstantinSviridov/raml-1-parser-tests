@@ -1,0 +1,243 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "lat-long": {
+          "name": "lat-long",
+          "displayName": "lat-long",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "lat": {
+              "name": "lat",
+              "displayName": "lat",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "number"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            },
+            "long": {
+              "name": "long",
+              "displayName": "long",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "number"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "loc": {
+          "name": "loc",
+          "displayName": "loc",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "location": {
+              "name": "location",
+              "displayName": "location",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "type": {
+                    "insertedAsDefault": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "paging": {
+          "name": "paging",
+          "displayName": "paging",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "start": {
+              "name": "start",
+              "displayName": "start",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "number"
+              ],
+              "required": false,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            },
+            "page-size": {
+              "name": "page-size",
+              "displayName": "page-size",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "number"
+              ],
+              "required": false,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "Illustrate query parameter variations",
+    "resources": [
+      {
+        "methods": [
+          {
+            "queryString": {
+              "name": "queryString",
+              "displayName": "queryString",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "paging",
+                "lat-long | loc"
+              ],
+              "examples": [
+                {
+                  "value": "{\n  \"start\": 2,\n  \"lat\": 12,\n  \"long\": 13\n}",
+                  "strict": true,
+                  "name": "first",
+                  "structuredValue": {
+                    "start": 2,
+                    "lat": 12,
+                    "long": 13
+                  }
+                },
+                {
+                  "value": "{\n  \"start\": 2,\n  \"page-size\": 20,\n  \"location\": \"1,2\"\n}",
+                  "strict": true,
+                  "name": "second",
+                  "structuredValue": {
+                    "start": 2,
+                    "page-size": 20,
+                    "location": "1,2"
+                  }
+                },
+                {
+                  "value": "{\n  \"lat\": 12,\n  \"location\": 2\n}",
+                  "strict": false,
+                  "name": "third",
+                  "structuredValue": {
+                    "lat": 12,
+                    "location": 2
+                  }
+                }
+              ],
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  }
+                }
+              }
+            },
+            "method": "get"
+          }
+        ],
+        "relativeUri": "/locations",
+        "displayName": "/locations",
+        "__METADATA__": {
+          "primitiveValuesMeta": {
+            "displayName": {
+              "calculated": true
+            }
+          }
+        },
+        "relativeUriPathSegments": [
+          "locations"
+        ],
+        "absoluteUri": "/locations"
+      }
+    ]
+  },
+  "errors": []
+}

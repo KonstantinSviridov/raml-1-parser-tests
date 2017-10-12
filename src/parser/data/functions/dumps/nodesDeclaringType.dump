@@ -1,0 +1,38 @@
+{
+	"SomeType": {
+		"name": "SomeType",
+		"displayName": "SomeType",
+		"typePropertyKind": "TYPE_EXPRESSION",
+		"type": [
+			"lib.TypeFromLibrary"
+		],
+		"properties": {
+			"prop": {
+				"name": "prop",
+				"displayName": "prop",
+				"typePropertyKind": "TYPE_EXPRESSION",
+				"type": [
+					"string"
+				],
+				"required": true,
+				"__METADATA__": {
+					"primitiveValuesMeta": {
+						"displayName": {
+							"calculated": true
+						},
+						"required": {
+							"insertedAsDefault": true
+						}
+					}
+				}
+			}
+		},
+		"__METADATA__": {
+			"primitiveValuesMeta": {
+				"displayName": {
+					"calculated": true
+				}
+			}
+		}
+	}
+}

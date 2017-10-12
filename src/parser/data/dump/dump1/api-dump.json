@@ -1,0 +1,304 @@
+{
+	"types": [
+		{
+			"Person": {
+				"name": "Person",
+				"displayName": "Person",
+				"typePropertyKind": "TYPE_EXPRESSION",
+				"type": [
+					"object"
+				],
+				"properties": {
+					"firstname": {
+						"name": "firstname",
+						"displayName": "firstname",
+						"typePropertyKind": "TYPE_EXPRESSION",
+						"type": [
+							"string"
+						],
+						"required": true,
+						"description": "example description",
+						"__METADATA__": {
+							"primitiveValuesMeta": {
+								"displayName": {
+									"calculated": true
+								},
+								"required": {
+									"insertedAsDefault": true
+								}
+							}
+						}
+					},
+					"lastname": {
+						"name": "lastname",
+						"displayName": "lastname",
+						"typePropertyKind": "TYPE_EXPRESSION",
+						"type": [
+							"string"
+						],
+						"required": false,
+						"__METADATA__": {
+							"primitiveValuesMeta": {
+								"displayName": {
+									"calculated": true
+								}
+							}
+						}
+					},
+					"addresses": {
+						"name": "addresses",
+						"displayName": "addresses",
+						"typePropertyKind": "TYPE_EXPRESSION",
+						"type": [
+							"array"
+						],
+						"required": true,
+						"__METADATA__": {
+							"primitiveValuesMeta": {
+								"displayName": {
+									"calculated": true
+								},
+								"required": {
+									"insertedAsDefault": true
+								}
+							}
+						},
+						"items": "string"
+					},
+					"age": {
+						"name": "age",
+						"displayName": "age",
+						"typePropertyKind": "TYPE_EXPRESSION",
+						"type": [
+							"number"
+						],
+						"required": true,
+						"__METADATA__": {
+							"primitiveValuesMeta": {
+								"displayName": {
+									"calculated": true
+								},
+								"required": {
+									"insertedAsDefault": true
+								}
+							}
+						}
+					}
+				},
+				"__METADATA__": {
+					"primitiveValuesMeta": {
+						"displayName": {
+							"calculated": true
+						}
+					}
+				}
+			}
+		}
+	],
+	"title": "API with Types",
+	"baseUri": "/media",
+	"protocols": [
+		"HTTP"
+	],
+	"resources": [
+		{
+			"methods": [
+				{
+					"responses": {
+						"200": {
+							"code": "200",
+							"body": {
+								"application/xml": {
+									"name": "application/xml",
+									"displayName": "application/xml",
+									"typePropertyKind": "TYPE_EXPRESSION",
+									"type": [
+										"Person"
+									],
+									"example": {
+										"lastname": "arkhipenko",
+										"firstname": "nicolas",
+										"juan": "juan",
+										"addresses": [
+											"myadress"
+										],
+										"age": 123
+									},
+									"properties": {
+										"juan": {
+											"name": "juan",
+											"displayName": "juan",
+											"typePropertyKind": "TYPE_EXPRESSION",
+											"type": [
+												"string"
+											],
+											"required": true,
+											"__METADATA__": {
+												"primitiveValuesMeta": {
+													"displayName": {
+														"calculated": true
+													},
+													"required": {
+														"insertedAsDefault": true
+													}
+												}
+											}
+										}
+									},
+									"__METADATA__": {
+										"primitiveValuesMeta": {
+											"displayName": {
+												"calculated": true
+											}
+										}
+									},
+									"structuredExample": {
+										"value": "{\n  \"lastname\": \"arkhipenko\",\n  \"firstname\": \"nicolas\",\n  \"juan\": \"juan\",\n  \"addresses\": [\n    \"myadress\"\n  ],\n  \"age\": 123\n}",
+										"strict": true,
+										"name": null,
+										"structuredValue": {
+											"lastname": "arkhipenko",
+											"firstname": "nicolas",
+											"juan": "juan",
+											"addresses": [
+												"myadress"
+											],
+											"age": 123
+										},
+										"asXMLString": "<Person>\n    <firstname>nicolas</firstname>\n    <lastname>arkhipenko</lastname>\n    <addresses>myadress</addresses>\n    <age>123</age>\n\n</Person>\n"
+									}
+								}
+							}
+						}
+					},
+					"body": {
+						"application/json": {
+							"name": "application/json",
+							"displayName": "application/json",
+							"typePropertyKind": "TYPE_EXPRESSION",
+							"type": [
+								"object"
+							],
+							"properties": {
+								"developer": {
+									"name": "developer",
+									"displayName": "developer",
+									"typePropertyKind": "TYPE_EXPRESSION",
+									"type": [
+										"string"
+									],
+									"required": true,
+									"__METADATA__": {
+										"primitiveValuesMeta": {
+											"displayName": {
+												"calculated": true
+											},
+											"required": {
+												"insertedAsDefault": true
+											}
+										}
+									}
+								},
+								"test": {
+									"name": "test",
+									"displayName": "test",
+									"typePropertyKind": "TYPE_EXPRESSION",
+									"type": [
+										"string"
+									],
+									"required": true,
+									"__METADATA__": {
+										"primitiveValuesMeta": {
+											"displayName": {
+												"calculated": true
+											},
+											"required": {
+												"insertedAsDefault": true
+											}
+										}
+									}
+								},
+								"animal": {
+									"name": "animal",
+									"displayName": "animal",
+									"typePropertyKind": "TYPE_EXPRESSION",
+									"type": [
+										"string"
+									],
+									"required": true,
+									"__METADATA__": {
+										"primitiveValuesMeta": {
+											"displayName": {
+												"calculated": true
+											},
+											"required": {
+												"insertedAsDefault": true
+											}
+										}
+									}
+								},
+								"car": {
+									"name": "car",
+									"displayName": "car",
+									"typePropertyKind": "TYPE_EXPRESSION",
+									"type": [
+										"string"
+									],
+									"required": true,
+									"__METADATA__": {
+										"primitiveValuesMeta": {
+											"displayName": {
+												"calculated": true
+											},
+											"required": {
+												"insertedAsDefault": true
+											}
+										}
+									}
+								}
+							},
+							"__METADATA__": {
+								"primitiveValuesMeta": {
+									"displayName": {
+										"calculated": true
+									}
+								}
+							}
+						}
+					},
+					"protocols": [
+						"HTTP"
+					],
+					"method": "get",
+					"__METADATA__": {
+						"primitiveValuesMeta": {
+							"protocols": {
+								"calculated": true
+							}
+						}
+					}
+				}
+			],
+			"relativeUri": "/users",
+			"displayName": "/users",
+			"__METADATA__": {
+				"primitiveValuesMeta": {
+					"displayName": {
+						"calculated": true
+					}
+				}
+			},
+			"relativeUriPathSegments": [
+				"users"
+			],
+			"absoluteUri": "/media/users"
+		}
+	],
+	"__METADATA__": {
+		"primitiveValuesMeta": {
+			"protocols": {
+				"calculated": true
+			}
+		}
+	}
+}

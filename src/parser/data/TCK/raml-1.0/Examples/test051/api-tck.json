@@ -1,0 +1,136 @@
+{
+  "ramlVersion": "RAML10",
+  "type": "Api",
+  "specification": {
+    "types": [
+      {
+        "ObjectType1": {
+          "name": "ObjectType1",
+          "displayName": "ObjectType1",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "object"
+          ],
+          "examples": [
+            {
+              "annotations": {
+                "NumberAnnotation": {
+                  "structuredValue": 5,
+                  "name": "NumberAnnotation"
+                },
+                "ObjectAnnotation": {
+                  "structuredValue": {
+                    "prop1": "value1"
+                  },
+                  "name": "ObjectAnnotation"
+                }
+              },
+              "value": "{\n  \"prop1\": \"value1\"\n}",
+              "strict": false,
+              "name": "example1",
+              "displayName": "myExample1",
+              "description": "example 1 of ObjectType3",
+              "structuredValue": {
+                "prop1": "value1"
+              }
+            },
+            {
+              "annotations": {
+                "NumberAnnotation": {
+                  "structuredValue": 15,
+                  "name": "NumberAnnotation"
+                },
+                "ObjectAnnotation": {
+                  "structuredValue": {
+                    "prop1": "value2"
+                  },
+                  "name": "ObjectAnnotation"
+                }
+              },
+              "value": "{\n  \"prop1\": \"value2\"\n}",
+              "strict": false,
+              "name": "example2",
+              "displayName": "myExample2",
+              "description": "example 2 of ObjectType3",
+              "structuredValue": {
+                "prop1": "value2"
+              }
+            }
+          ],
+          "properties": {
+            "prop1": {
+              "name": "prop1",
+              "displayName": "prop1",
+              "typePropertyKind": "TYPE_EXPRESSION",
+              "type": [
+                "string"
+              ],
+              "required": true,
+              "__METADATA__": {
+                "primitiveValuesMeta": {
+                  "displayName": {
+                    "calculated": true
+                  },
+                  "type": {
+                    "insertedAsDefault": true
+                  },
+                  "required": {
+                    "insertedAsDefault": true
+                  }
+                }
+              }
+            }
+          },
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              },
+              "type": {
+                "insertedAsDefault": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "annotationTypes": [
+      {
+        "NumberAnnotation": {
+          "name": "NumberAnnotation",
+          "displayName": "NumberAnnotation",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "number"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "ObjectAnnotation": {
+          "name": "ObjectAnnotation",
+          "displayName": "ObjectAnnotation",
+          "typePropertyKind": "TYPE_EXPRESSION",
+          "type": [
+            "ObjectType1"
+          ],
+          "__METADATA__": {
+            "primitiveValuesMeta": {
+              "displayName": {
+                "calculated": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": "Example API test 06"
+  },
+  "errors": []
+}
